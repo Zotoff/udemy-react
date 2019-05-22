@@ -1,0 +1,22 @@
+body {
+    margin: 0
+}
+header {
+    background: #04a9f4;
+    text-align: center;
+}
+.logo {
+    color: #fff;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+}
+
+header input {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.news__item {
+    background: #f8f8f8;
+    border-bottom: 2px solid #000;
+}

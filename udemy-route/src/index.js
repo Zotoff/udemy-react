@@ -8,6 +8,7 @@ import Profile from './components/profile';
 import Posts from './components/posts';
 import PostItem from './components/post_item';
 import ErrorPage from './components/404';
+import User from './components/user';
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
                 <header>
                     <NavLink to="/">Home</NavLink><br/>
                     <NavLink to="/posts">Posts</NavLink><br/>
+                    <NavLink to="/user">User</NavLink><br/>
                     <NavLink to={{
                         pathname: '/profile',
                         hash: '#francis',
@@ -29,6 +31,7 @@ const App = () => {
                     <Route path="/posts/:id" component={PostItem}/>
                     <Route path="/posts" component={Posts}/>
                     <Route path="/profile" component={Profile}/>
+                    <Route path="/user" component={User}/>
                     <Route path="/" component={Home}/>
                     <Route component={ErrorPage}/>
                 </Switch>

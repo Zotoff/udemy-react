@@ -84,7 +84,8 @@
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^5.0.0",
     "react-simple-sidenav": "^1.0.1",
-    "react-slick": "^0.24.0"
+    "react-slick": "^0.24.0",
+    "react-transition-group": "^4.0.1"
   },
   "jest": {
     "collectCoverageFrom": [

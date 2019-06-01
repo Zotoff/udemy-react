@@ -6,6 +6,7 @@ import Layout from './hoc/layout/layout';
 import NewsArticle from './components/Articles/News/Post/index';
 import VideoArticle from './components/Articles/Videos/Video/index';
 import NewsMain from './components/Articles/News/NewsMain/newsMain';
+import VideosMain from './components/Articles/Videos/VideosMain/videosMain';
 
 class Routes extends Component {
     render(){
@@ -17,6 +18,7 @@ class Routes extends Component {
                     <Route path="/news" exact component={NewsMain} />
                     <Route path="/articles/:id" exact component={NewsArticle} />
                     <Route path="/videos/:id" exact component={VideoArticle}/>
+                    <Route path="/videos" exact component={VideosMain} />
                 </Switch>
             </Layout>
         )

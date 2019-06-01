@@ -4,13 +4,17 @@ import {URL} from '../../../../config';
 
 
 import Header from './header';
+import VideosRelated from '../VideosRelated/videosRelated';
 import styles from '../../articles.css';
+import { awaitExpression } from '@babel/types';
 
 class VideoArticle extends Component {
 
     state = {
         article: [],
-        team: []
+        team: [],
+        teams: [],
+        related: []
     }
 
     componentWillMount(){
@@ -21,11 +25,26 @@ class VideoArticle extends Component {
                 axios.get(`${URL}/teams?id=${video.team}`)
                 .then(response => {
                     this.setState({video, team: response.data})
-                })
+                });
+                this.getRelated();
             }
         )
     }
 
+    getRelated = () => {
+        axios.get(`${URL}/teams`)
+        .then(response => {
+            let teams = response.data
+
+            axios.get(`${URL}/videos?q=${this.state.team[0].city}&limit=3`)
+            .then(response => {
+                this.setState({
+                    teams,
+                    related: response.data
+                })
+            })
+        })
+    }
 
     render(){
         const article = this.state.article;
@@ -33,6 +52,20 @@ class VideoArticle extends Component {
         return (
             <div>
                 <Header teamData={team[0]} />
+                <div className={styles.videoWrapper}>
+                    <h1>{article.title}</h1>
+                    <iframe
+                        title="videoplayer"
+                        width="100%"
+                        height="300px"
+                        src={`https://www.youtube.com/emned/${article.url}`}
+                    >
+                    </iframe>
+                </div>
+                <VideosRelated 
+                    data={this.state.related}
+                    teams={this.state.teams}
+               />
             </div>
         )
     }

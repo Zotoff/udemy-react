@@ -81,6 +81,8 @@
     ]
   },
   "devDependencies": {
+    "firebase": "^6.1.1",
+    "moment": "^2.24.0",
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^5.0.0",
     "react-simple-sidenav": "^1.0.1",

@@ -35,7 +35,7 @@ const SideNavItems = (props) => {
             icon: 'sign-in',
             text: 'Sign-in',
             link: '/sign-in',
-            login: false
+            login: true
         },
         {
             type: style.option,
@@ -49,7 +49,7 @@ const SideNavItems = (props) => {
             icon: 'sign-in',
             text: 'Dashboard',
             link: '/dashboard',
-            login: false
+            login: true
         }
     ];
 

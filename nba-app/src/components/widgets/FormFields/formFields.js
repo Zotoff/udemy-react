@@ -40,6 +40,22 @@ const FormField = ({formData, change, id}) => {
                     </div>
                 )
             break;
+            case('select'):
+                formTemplate = (
+                    <div>
+                        <select
+                            value={formData.value}
+                            name={formData.config.name}
+                            onBlur = {(event)=>change({event, id, blur:true})} // Passing the change function from props at blur event
+                            onChange={(event)=>change({event, id, blur:false})} // Passing the change function from props at change event
+                        >
+                            {formData.config.options.map((item, i) => (
+                                <option key={i} value={item.id}>{item.name}</option>
+                            ))}
+                        </select>
+                    </div>
+                )
+            break;
             default:
                 formTemplate = null;
             break;

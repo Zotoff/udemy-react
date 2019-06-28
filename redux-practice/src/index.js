@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes'
+import Routes from './routes';
 
-const App = () => {
-    return(
-        <BrowserRouter>
-            <Routes/>
-        </BrowserRouter>
-    )
-}
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Stops the action until the script is making the request and returns the payload
+import promiseMiddleware from 'redux-promise';
+
+import reducers from './reducers';
+
+
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore)
+
+ReactDOM.render(
+
+<Provider store={createStoreWithMiddleware(reducers)}>
+    <BrowserRouter>
+        <Routes />
+    </BrowserRouter>
+</Provider>
+
+, document.getElementById('root'));
 

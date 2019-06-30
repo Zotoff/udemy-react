@@ -1,0 +1,18 @@
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <script>
+  $.ajax({
+      type: "POST",
+      url: "/enteruser_post",
+      data: JSON.stringify({
+          firstname: 'Payl',
+          lastname: 'Zotov',
+          age: 31
+      }),
+      contentType: "application/json"
+  })
+  
+  </script>

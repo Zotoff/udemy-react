@@ -1,0 +1,15 @@
+{
+  "name": "udemy_mongodb",
+  "version": "1.0.0",
+  "description": "Udemy mongodb test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zotoff",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  }
+}

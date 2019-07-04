@@ -1,3 +1,6 @@
 code
 code.zip
 ./idea
+node_modules
+udemy_mongodb/node_modules
+node_react_server/node_modules

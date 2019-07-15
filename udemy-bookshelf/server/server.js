@@ -90,7 +90,7 @@ app.get('/api/logout',auth,(req,res)=>{
 })
 
 // Checking the user rights
-app.get('/api/auth',auth,()=>{
+app.get('/api/auth',auth,(req,res)=>{
     res.json({
         isAuth:true,
         id:req.user._id,
